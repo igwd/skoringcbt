@@ -14,7 +14,6 @@
                             <option wire:key="parent-{{ $item->Tahun }}" value="{{$item->Tahun}}" {{$tahunPendaftaranSelected == $item->Tahun ? 'selected' : '' }}>{{$item->Tahun}}</option>
                         @endforeach
                     </select>
-                    @error('parent') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                 </div>
             </div>
             <div class="form-group">
@@ -26,7 +25,6 @@
                             <option wire:key="parent-{{ $item->KodePendaftaran }}" value="{{$item->KodePendaftaran}}" {{$periodePendaftaranSelected == $item->KodePendaftaran ? 'selected' : '' }}>{{$item->NamaPendaftaran}}</option>
                         @endforeach
                     </select>
-                    @error('parent') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                 </div>
             </div>
         </div>
@@ -59,7 +57,7 @@
             let data = values[0].values;
             elPeriode.empty();
             // Add the default option
-            elPeriode.append(new Option('Select Role Access', '0'));
+            elPeriode.append(new Option('Select Periode', '0'));
             // Add new options from the event data
             data.forEach(periode => {
                 elPeriode.append(new Option(periode.NamaPendaftaran, periode.KodePendaftaran));

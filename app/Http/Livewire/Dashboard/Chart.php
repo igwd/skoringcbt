@@ -14,8 +14,8 @@ class Chart extends Component
 
     }
 
-    public function loadChart($tahunPendaftaran=null,$periodePendaftaran=null){
-        dd($tahunPendaftaran,$periodePendaftaran);
+    public function loadChart($tahunPendaftaranSelected=null,$periodePendaftaranSelected=null){
+        //dd($tahunPendaftaran,$periodePendaftaran);
     }
 
     public function render()

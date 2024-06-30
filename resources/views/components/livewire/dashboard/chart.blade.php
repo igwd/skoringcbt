@@ -5,9 +5,37 @@
     </div>
 </div>
 @script
-{{-- 
-
---}}
+{{-- <script>
+    const chart = new Chart(
+        document.getElementById('chart'), {
+            type: 'line',
+            data: {
+                labels: @json($labels),
+                datasets: @json($dataset)
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true
+                    }
+                }
+            }
+        }
+    );
+    Livewire.on('updateChart', data => {
+        chart.data = data;
+        chart.update();
+    });
+</script> --}}
 <script>
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
@@ -45,6 +73,6 @@
         }
     });
 
-    console.log('hello');
+    console.log('hello chart loaded here');
 </script>
 @endscript

@@ -4,10 +4,10 @@ namespace App\Http\Livewire\Periode;
 
 use Livewire\Component;
 
-class Periode extends Component
+class Main extends Component
 {
     public function render()
     {
-        return view('components.livewire.periode.periode');
+        return view('components.livewire.periode.main');
     }
 }

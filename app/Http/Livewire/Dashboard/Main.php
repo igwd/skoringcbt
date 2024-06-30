@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\TbPendaftaran;
 use Illuminate\Support\Facades\Session;
 
-class Dashboard extends Component
+class Main extends Component
 {
     public $tahunPendaftaran,$tahunPendaftaranSelected;
     public $periodePendaftaran, $periodePendaftaranSelected;
@@ -20,13 +20,18 @@ class Dashboard extends Component
 
     public function updatedTahunPendaftaranSelected(){
         $this->periodePendaftaran = TbPendaftaran::where('Tahun',$this->tahunPendaftaranSelected)->orderBy('DariTgl','desc')->get();
-        $this->dispatch('loadChart',['tahunPendaftaran'=>$this->tahunPendaftaranSelected,'periodePendaftaran'=>$this->periodePendaftaranSelected]);
-        $this->setSessionValue('periodePendaftaranSelected',$this->tahunPendaftaranSelected);
+        //update select 2
+        $this->dispatch("updatedTahunPendaftaranSelected",['values'=>$this->periodePendaftaran,'periodePendaftaranSelected'=>$this->periodePendaftaranSelected]);
+        //update chart
+        $this->dispatch('loadChart',['tahunPendaftaranSelected'=>$this->tahunPendaftaranSelected,'periodePendaftaranSelected'=>$this->periodePendaftaranSelected]);
+        $this->setSessionValue('tahunPendaftaranSelected',$this->tahunPendaftaranSelected);
     }
 
     public function updatedPeriodePendaftaranSelected(){
-        $this->dispatch('loadChart',['tahunPendaftaran'=>$this->tahunPendaftaranSelected,'periodePendaftaran'=>$this->periodePendaftaranSelected]);
         $this->setSessionValue('periodePendaftaranSelected',$this->periodePendaftaranSelected);
+        $this->dispatch('loadChart',['tahunPendaftaranSelected'=>$this->tahunPendaftaranSelected,'periodePendaftaranSelected'=>$this->periodePendaftaranSelected]);
+        //update chart
+        $this->dispatch('loadChart',['tahunPendaftaranSelected'=>$this->tahunPendaftaranSelected,'periodePendaftaranSelected'=>$this->periodePendaftaranSelected]);
     }
 
     public function setSessionValue($key,$value){
@@ -35,6 +40,6 @@ class Dashboard extends Component
 
     public function render()
     {
-        return view('components.livewire.dashboard.dashboard');
+        return view('components.livewire.dashboard.main');
     }
 }
