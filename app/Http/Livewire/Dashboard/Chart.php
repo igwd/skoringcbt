@@ -6,16 +6,24 @@ use Livewire\Component;
 
 class Chart extends Component
 {
+    public $loading = true;
+
     protected $listeners = [
         'loadChart'=>'loadChart',
+        'onChangeTahunPendaftaranSelected'=>'loadChart',
+        'onChangePeriodePendaftaranSelected'=>'loadChart'
     ];
 
     public function mount(){
-
+        $this->loading = false;
     }
 
-    public function loadChart($tahunPendaftaranSelected=null,$periodePendaftaranSelected=null){
-        //dd($tahunPendaftaran,$periodePendaftaran);
+    public function loadChart(){
+        $this->loading = true;
+        $tahunPendaftaranSelected = @session('tahunPendaftaranSelected');
+        $periodePendaftaranSelected = @session('periodePendaftaranSelected');
+        //sleep(15);
+        $this->loading = false;
     }
 
     public function render()

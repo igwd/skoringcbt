@@ -1,6 +1,9 @@
 <div>
     {{-- Success is as dangerous as failure. --}}
     <div class="p-6">
+        @if($loading)
+            loading...
+        @endif
         <canvas id="chart" width="400" height="200"></canvas>
     </div>
 </div>
