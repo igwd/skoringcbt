@@ -1,11 +1,3 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-nav .active{
-    @apply bg-blue-800 text-white;
-}
-
 /* transition */
 .transition-enter {
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;

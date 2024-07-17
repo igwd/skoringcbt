@@ -1,9 +1,9 @@
 <div>
-    {{-- Because she competes with no one, no one can compete with her. --}}
+    {{-- Because you competes with no one, no one can compete with you. --}}
     <div class="form-group">
         <label for="tahun">Tahun</label>
         <div wire:ignore>
-            <select id="tahun" class="form-control select2" style="width:100%" wire:model.defer="tahunPendaftaranSelected">
+            <select id="tahun" class="form-control select2" style="width:100%;" wire:model.defer="tahunPendaftaranSelected">
                 <option value="0">Semua</option>
                 @foreach($tahunPendaftaran as $item)
                     <option wire:key="parent-{{ $item->Tahun }}" value="{{$item->Tahun}}" {{$tahunPendaftaranSelected == $item->Tahun ? 'selected' : '' }}>{{$item->Tahun}}</option>
