@@ -5,7 +5,7 @@
 >
   <!-- SIDEBAR HEADER -->
   <div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-    <a href="index.html">
+    <a href="{{url('/')}}">
       <img src="./images/logo/logo.svg" alt="Logo" />
     </a>
 
@@ -575,22 +575,5 @@
       </div>
     </nav>
     <!-- Sidebar Menu -->
-
-    <!-- Promo Box -->
-    <div
-      class="mx-auto mb-10 w-full max-w-60 rounded-sm border border-strokedark bg-boxdark px-4 py-6 text-center shadow-default"
-    >
-      <h3 class="mb-1 font-semibold text-white">TailAdmin Pro</h3>
-      <p class="mb-4 text-xs">Get All Dashboards and 300+ UI Elements</p>
-      <a
-        href="https://tailadmin.com/pricing"
-        target="_blank"
-        rel="nofollow"
-        class="flex items-center justify-center rounded-md bg-primary p-2 text-white hover:bg-opacity-95"
-      >
-        Purchase Now
-      </a>
-    </div>
-    <!-- Promo Box -->
   </div>
 </aside>
