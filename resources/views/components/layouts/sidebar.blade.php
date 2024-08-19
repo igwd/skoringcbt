@@ -4,9 +4,11 @@
   @click.outside="sidebarToggle = false"
 >
   <!-- SIDEBAR HEADER -->
-  <div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-    <a href="{{url('/')}}">
-      <img src="./images/logo/logo.svg" alt="Logo" />
+  <div class="flex items-center justify-between gap-2 px-6 py-2">
+    <a class="flex" href="{{url('/')}}">
+        <img class="flex-col w-10" src="./images/logo/skoring-logo.svg" alt="Logo" />
+        <span class="flex-col py-5 text-2xl text-white">Skoring<b>CBT</b>
+        </span>
     </a>
 
     <button

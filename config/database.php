@@ -39,6 +39,21 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+        'ssh_mysql' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST_SSH', '127.0.0.1'),
+            'port'      => env('DB_PORT_SSH', '3306'),
+            'database'  => env('DB_DATABASE_SSH', 'forge'),
+            'username'  => env('DB_USERNAME_SSH', 'forge'),
+            'password'  => env('DB_PASSWORD_SSH', ''),
+            'unix_socket' => '',
+            'charset'   => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix'    => '',
+            'strict'    => true,
+            'engine'    => null,
+        ],
+
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DB_URL'),
@@ -131,6 +146,14 @@ return [
 
     ],
 
+
+    'ssh' => [
+        'host'      => env('SSH_HOST'),
+        'port'      => env('SSH_PORT', 22),
+        'username'  => env('SSH_USERNAME'),
+        'password'  => env('SSH_PASSWORD'),
+        'private_key' => env('SSH_PRIVATE_KEY', null),
+    ],
     /*
     |--------------------------------------------------------------------------
     | Migration Repository Table

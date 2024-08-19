@@ -38,8 +38,8 @@
         </span>
       </button>
       <!-- Hamburger Toggle BTN -->
-      <a class="block flex-shrink-0 lg:hidden" href="index.html">
-        <img src="./images/logo/logo-icon.svg" alt="Logo" />
+      <a class="block flex-shrink-0 lg:hidden" href="#">
+        <img class="w-10" src="./images/logo/skoring-logo.svg" alt="Logo" />
       </a>
     </div>
     <div class="hidden sm:block">
